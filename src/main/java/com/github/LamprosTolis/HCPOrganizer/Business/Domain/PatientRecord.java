@@ -11,8 +11,8 @@ public class PatientRecord {
     private String patientInfo;
     private Date date;
 
-    public void getPatientId(long patientId) {
-        this.patientId = patientId;
+    public long getPatientId() {
+        return patientId;
     }
 
     public void setPatientId(long patientId) {

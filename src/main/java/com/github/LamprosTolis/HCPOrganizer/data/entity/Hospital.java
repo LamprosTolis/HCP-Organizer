@@ -1,17 +1,18 @@
 package com.github.LamprosTolis.HCPOrganizer.data.entity;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
+@Entity
+@Table(name="HOSPITALS")
+@NoArgsConstructor
 public class Hospital {
 
     @Id
-    @Column
+    @Column(name="HOSPITAL_ID")
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Getter @Setter
     private long hospitalId;

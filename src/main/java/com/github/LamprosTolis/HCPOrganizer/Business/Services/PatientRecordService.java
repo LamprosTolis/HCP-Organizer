@@ -4,6 +4,7 @@ import com.github.LamprosTolis.HCPOrganizer.Business.Domain.PatientRecord;
 import com.github.LamprosTolis.HCPOrganizer.data.entity.Patient;
 import com.github.LamprosTolis.HCPOrganizer.data.repository.DoctorRepository;
 import com.github.LamprosTolis.HCPOrganizer.data.repository.HospitalRepository;
+import com.github.LamprosTolis.HCPOrganizer.data.repository.PatientRecordRepository;
 import com.github.LamprosTolis.HCPOrganizer.data.repository.PatientRepository;
 import lombok.Getter;
 import lombok.Setter;
@@ -19,12 +20,14 @@ public class PatientRecordService {
     private final DoctorRepository doctorRepository;
     private final HospitalRepository HospitalRepository;
     private final PatientRepository patientRepository;
+    private final PatientRecordRepository patientRecordRepository;
 
     @Autowired
-    public PatientRecordService(DoctorRepository doctorRepository, HospitalRepository hospitalRepository, PatientRepository patientRepository) {
+    public PatientRecordService(DoctorRepository doctorRepository, HospitalRepository hospitalRepository, PatientRepository patientRepository, PatientRecordRepository patientRecordRepository) {
         this.doctorRepository = doctorRepository;
         this.HospitalRepository = hospitalRepository;
         this.patientRepository = patientRepository;
+        this.patientRecordRepository = patientRecordRepository;
     }
 
     public List<PatientRecord> getAllPatientsForDate(Date date){
@@ -35,6 +38,11 @@ public class PatientRecordService {
             patientRecord.setPatientId(patient.getPatientId());
             patientRecordMap.put(patient.getPatientId(), patientRecord);
         });
+
+//        Iterable<Patient> patients = this.patientRecordRepository.findPatientRecordByDate(new java.sql.Date(date.getTime()));
+//        patientRecords.forEach(patientRecord -> {
+//            PatientRecord patientRecord = patientRecordMap.get(patientRecord.getPatientId());
+//        });
         return null;
     }
 }
