@@ -1,7 +1,6 @@
-package com.github.LamprosTolis.HCPOrganizer.data.entity;
+package com.github.LamprosTolis.HCPOrganizer.data.model;
 
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
@@ -14,18 +13,18 @@ public class Patient {
     @Column(name="PATIENT_ID")
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Getter @Setter
-    private long patientId;
+    private long patient_Id;
 
     @Getter @Setter
     @Column(name="FIRST_NAME")
-    private String patientFirstName;
+    private String patient_FirstName;
 
     @Getter @Setter
     @Column(name="LAST_NAME")
-    private String patientLastName;
+    private String patient_LastName;
 
     @Getter @Setter
     @Column(name="PATIENT_INFO")
-    private String patientInfo;
+    private String patient_Info;
 
 }
