@@ -54,12 +54,12 @@ public class OrganizerController{
     public Optional<HCO> get_HCO_byId(@PathVariable Long Id){
         return this.hco_Repository.findById(Id);
     }
-//
-//    // Getting HCO by Name
-//    @RequestMapping("/HCO/{Name}")
-//    @GetMapping
-//    public List<HCO> get_HCP_byName(@PathVariable String Name){
-//        return this.hco_Repository.findByName(Name);
-//    }
+
+    // Getting HCO by Name
+    @RequestMapping("/HCO/{Name}")
+    @GetMapping
+    public List<HCO> get_HCP_byName(@PathVariable String Name){
+        return this.hco_Repository.findByName(Name);
+    }
 }
 
