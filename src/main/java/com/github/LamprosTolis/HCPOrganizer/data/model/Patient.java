@@ -13,18 +13,18 @@ public class Patient {
     @Column(name="PATIENT_ID")
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Getter @Setter
-    private long patient_Id;
+    private long id;
 
     @Getter @Setter
     @Column(name="FIRST_NAME")
-    private String patient_FirstName;
+    private String firstName;
 
     @Getter @Setter
     @Column(name="LAST_NAME")
-    private String patient_LastName;
+    private String lastName;
 
     @Getter @Setter
     @Column(name="PATIENT_INFO")
-    private String patient_Info;
+    private String info;
 
 }

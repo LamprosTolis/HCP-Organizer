@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www/thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>HCP Organizer</title>
 </head>
 <body>
-<div class="patientDiv">
+<div>
     <p>This is the HomePage!</p>
-    <button type="button" class="btn btn-primary" >
+    <button type="submit" action="get_all_HCP" method="GET" class="btn btn-primary" >
         Go To Patient
     </button>
     <button type="button" class="btn btn-secondary" >
@@ -17,6 +17,20 @@
         Go To Admin
     </button>
 </div>
+<table action="get_all_HCP" method="GET">
+    <tr th:each="HCP : ${HCP}">
+        <td th:text="HCP.hcp_id"></td>
+    </tr>
+</table>
+<!--<form action="HCP/all" method="GET">-->
+
+<!--&lt;!&ndash;    <input type="text" name="studentName"&ndash;&gt;-->
+<!--&lt;!&ndash;           placeholder="What's your name?" />&ndash;&gt;-->
+
+<!--    <input type="submit" />-->
+
+<!--</form>-->
+
 <link href="//netdna.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet" />
 </body>
 </html>

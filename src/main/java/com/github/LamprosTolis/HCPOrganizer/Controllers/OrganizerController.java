@@ -1,13 +1,13 @@
 package com.github.LamprosTolis.HCPOrganizer.Controllers;
 
 
-import com.github.LamprosTolis.HCPOrganizer.data.model.HCP;
+import com.github.LamprosTolis.HCPOrganizer.Business.Services.HCOService;
+import com.github.LamprosTolis.HCPOrganizer.Business.Services.HCPService;
 import com.github.LamprosTolis.HCPOrganizer.data.model.HCO;
-import com.github.LamprosTolis.HCPOrganizer.data.repository.HCP_Repository;
+import com.github.LamprosTolis.HCPOrganizer.data.model.HCP;
 import com.github.LamprosTolis.HCPOrganizer.data.repository.HCO_Repository;
+import com.github.LamprosTolis.HCPOrganizer.data.repository.HCP_Repository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
-import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -17,49 +17,21 @@ import java.util.Optional;
 @RequestMapping("/")
 public class OrganizerController{
 
+
+    private final HCP_Repository hcpRepository;
+
+    private final HCO_Repository hcoRepository;
+
+    private final HCOService hcoService;
+    private final HCPService hcpService;
+
     @Autowired
-    private HCP_Repository hcp_Repository;
-    @Autowired
-    private HCO_Repository hco_Repository;
-
-    public OrganizerController(HCP_Repository hcp_repository, HCO_Repository hco_repository) {
-        hcp_Repository = hcp_repository;
-        hco_Repository = hco_repository;
+    public OrganizerController(HCP_Repository hcpRepository, HCO_Repository hcoRepository, HCOService hcoService, HCPService hcpService ) {
+        this.hcpRepository = hcpRepository;
+        this.hcoRepository = hcoRepository;
+        this.hcoService = hcoService;
+        this.hcpService = hcpService;
     }
 
-    // ========== HCP Requests ===============
-
-    // Getting all HCPs
-    @RequestMapping("/HCP/all")
-    @GetMapping
-    public Iterable<HCP> get_all_HCP(){ return this.hcp_Repository.findAll(); }
-
-    // Getting HCP by Id
-    @RequestMapping("/HCP/{Id}")
-    @GetMapping
-    public Optional<HCP> get_HCP_byId(@PathVariable Long Id){
-        return this.hcp_Repository.findById(Id);
-    }
-
-    // =========== HCO Requests =============
-
-    // Getting all HCOs
-    @RequestMapping("/HCO/all")
-    @GetMapping
-    public Iterable<HCO> get_all_HCO(){ return this.hco_Repository.findAll(); }
-
-    // Getting HCO by Id
-    @RequestMapping("/HCO/{Id}")
-    @GetMapping
-    public Optional<HCO> get_HCO_byId(@PathVariable Long Id){
-        return this.hco_Repository.findById(Id);
-    }
-
-    // Getting HCO by Name
-    @RequestMapping("/HCO/{Name}")
-    @GetMapping
-    public List<HCO> get_HCP_byName(@PathVariable String Name){
-        return this.hco_Repository.findByName(Name);
-    }
 }
 

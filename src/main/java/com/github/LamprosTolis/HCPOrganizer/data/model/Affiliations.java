@@ -14,5 +14,19 @@ public class Affiliations {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Getter
     @Setter
-    private long Affiliations_Id;
+    private long id;
+
+//    @Id
+//    @Column
+//    @GeneratedValue(strategy = GenerationType.AUTO)
+//    @Getter
+//    @Setter
+//    private long HCP_Id;
+
+//    @Id
+//    @Column
+//    @GeneratedValue(strategy = GenerationType.AUTO)
+//    @Getter
+//    @Setter
+//    private long HCO_Id;
 }
