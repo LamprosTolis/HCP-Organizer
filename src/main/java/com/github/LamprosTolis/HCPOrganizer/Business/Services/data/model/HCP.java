@@ -1,14 +1,11 @@
-package com.github.LamprosTolis.HCPOrganizer.data.model;
+package com.github.LamprosTolis.HCPOrganizer.Business.Services.data.model;
 
-import jdk.net.SocketFlow;
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
 
 @Entity
-@Data
 @Table(name="HCP")
 public class HCP {
 

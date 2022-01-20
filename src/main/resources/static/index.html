@@ -13,10 +13,10 @@
         <th>First Name</th>
         <th>Last Name</th>
     </tr>
-    <tr th:each="HCP : ${HCP}">
-        <td th:text="${HCP.Id}"></td>
-        <td th:text="${HCP.firstName}"></td>
-        <td th:text="${HCP.lastName}"></td>
+    <tr th:each="HCP : ${hcpRepository}">
+        <td th:text="${hcpRepository.id}"></td>
+        <td th:text="${hcpRepository.firstName}"></td>
+        <td th:text="${hcpRepository.lastName}"></td>
     </tr>
 </table>
 

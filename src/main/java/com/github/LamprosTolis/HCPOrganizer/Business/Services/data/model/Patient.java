@@ -1,4 +1,4 @@
-package com.github.LamprosTolis.HCPOrganizer.data.model;
+package com.github.LamprosTolis.HCPOrganizer.Business.Services.data.model;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -27,4 +27,7 @@ public class Patient {
     @Column(name="PATIENT_INFO")
     private String info;
 
+    @Getter @Setter
+    @Column(name="PATIENT_ADMISSION_DATE")
+    private String patientAdmissionDate;
 }

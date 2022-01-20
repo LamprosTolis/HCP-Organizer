@@ -3,15 +3,11 @@ package com.github.LamprosTolis.HCPOrganizer.Controllers;
 
 import com.github.LamprosTolis.HCPOrganizer.Business.Services.HCOService;
 import com.github.LamprosTolis.HCPOrganizer.Business.Services.HCPService;
-import com.github.LamprosTolis.HCPOrganizer.data.model.HCO;
-import com.github.LamprosTolis.HCPOrganizer.data.model.HCP;
-import com.github.LamprosTolis.HCPOrganizer.data.repository.HCO_Repository;
-import com.github.LamprosTolis.HCPOrganizer.data.repository.HCP_Repository;
+import com.github.LamprosTolis.HCPOrganizer.Business.Services.data.model.HCP;
+import com.github.LamprosTolis.HCPOrganizer.Business.Services.data.repository.HCO_Repository;
+import com.github.LamprosTolis.HCPOrganizer.Business.Services.data.repository.HCP_Repository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/")
@@ -32,6 +28,5 @@ public class OrganizerController{
         this.hcoService = hcoService;
         this.hcpService = hcpService;
     }
-
 }
 

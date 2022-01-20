@@ -1,6 +1,6 @@
-package com.github.LamprosTolis.HCPOrganizer.data.repository;
+package com.github.LamprosTolis.HCPOrganizer.Business.Services.data.repository;
 
-import com.github.LamprosTolis.HCPOrganizer.data.model.HCP;
+import com.github.LamprosTolis.HCPOrganizer.Business.Services.data.model.HCP;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

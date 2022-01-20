@@ -1,4 +1,4 @@
-package com.github.LamprosTolis.HCPOrganizer.data.model;
+package com.github.LamprosTolis.HCPOrganizer.Business.Services.data.model;
 
 import lombok.Getter;
 import lombok.Setter;

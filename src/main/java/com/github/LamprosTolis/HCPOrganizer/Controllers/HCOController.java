@@ -1,9 +1,11 @@
 package com.github.LamprosTolis.HCPOrganizer.Controllers;
 
 import com.github.LamprosTolis.HCPOrganizer.Business.Services.HCOService;
-import com.github.LamprosTolis.HCPOrganizer.data.model.HCO;
-import com.github.LamprosTolis.HCPOrganizer.data.repository.HCO_Repository;
+import com.github.LamprosTolis.HCPOrganizer.Business.Services.data.model.HCO;
+import com.github.LamprosTolis.HCPOrganizer.Business.Services.data.model.HCP;
+import com.github.LamprosTolis.HCPOrganizer.Business.Services.data.repository.HCO_Repository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -48,5 +50,11 @@ public class HCOController {
     @GetMapping(value = "/all-with-name")
     public List<HCO> getAllHCPbyName(@RequestParam String name) {
         return hcoService.getAllHCObyName(name);
+    }
+
+    @PostMapping(value = "/create")
+    @ResponseStatus(code = HttpStatus.CREATED)
+    public HCO createHCO(@RequestBody HCO hco){
+        return hcoService.createHCO(hco);
     }
 }
